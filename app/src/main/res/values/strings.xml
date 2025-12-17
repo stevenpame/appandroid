@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">app</string>
+    <string name="tpa">TIPO DE ACTIVIDAD</string>
+    <string name="can">CANTIDAD</string>
+    <string name="emi">EMISIONESCO2</string>
+    <string name="fec">FECHA</string>
+    <string name="boton">REGISTRAR</string>
+    <string name="boton2">CALCULAR</string>
+    <string name="trans">TRANSPORTE</string>
+    <string name="ene">ENERGIA</string>
+    <string name="com">COMIDA</string>
+    <string name="res1">resultado transporte</string>
+    <string name="res2">resultado energia</string>
+    <string name="res3">resultado comidas</string>
+</resources>
