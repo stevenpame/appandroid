@@ -1,15 +1,13 @@
 package com.steven.app.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.steven.app.R;
@@ -19,8 +17,9 @@ import com.steven.app.model.Manager;
 public class MainActivity extends AppCompatActivity {
 
     Manager manager;
-    EditText edtTipoactividad, edtCantidad, edtEmisionesco2, edtFecha, ;
-    Button btnRegistrar, btncalcula;
+    EditText edtTipoactividad, edtCantidad, edtFecha;
+    TextView txtEmisionesCO2;
+    Button btnRegistrar, btnAbrirCalcular;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
         edtTipoactividad = findViewById(R.id.edtTipoactividad);
         edtCantidad = findViewById(R.id.edtCantidad);
-        edtEmisionesco2 = findViewById(R.id.edtEmisionesCO2);
+        txtEmisionesCO2 = findViewById(R.id.txtEmisionesCO2);
         edtFecha = findViewById(R.id.edtFecha);
         btnRegistrar = findViewById(R.id.btnRegistrar);
+        btnAbrirCalcular = findViewById(R.id.btnAbrirCalcular);
 
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
                 String tipoactividad = edtTipoactividad.getText().toString();
                 String cantidad = edtCantidad.getText().toString();
-                String emisionesco2 = edtEmisionesco2.getText().toString();
+                String emisionesco2 = "0"; // Valor por defecto
                 String fecha = edtFecha.getText().toString();
 
-                Datos datos = new Datos(tipoactividad,cantidad ,emisionesco2, fecha);
+                Datos datos = new Datos(tipoactividad, cantidad, emisionesco2, fecha);
                 long resultado = manager.insertData(datos);
 
                 if (resultado > 0) {
@@ -55,33 +55,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    public void CalcularValor() {
-        rgproductos =  findViewById(R.id.rgproductos);
-        edt =  findViewById(R.id.);
-        rbradio = (RadioButton) findViewById(R.id.rbradio);
-        btncalcula = (Button) findViewById(R.id.btcalcula);
-        total = (EditText) findViewById(R.id.edtotal);
-
-        rgproductos.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        btnAbrirCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(@NonNull RadioGroup radioGroup, int checkedid) {
-                switch (checkedid) {
-                    case R.id.edt:
-                        precios = 0.21;
-                        precio.setText("" + precios);
-                        break;
-
-                    case R.id.rbradio:
-                        precios = 0.38;
-                        precio.setText("" + precios);
-                        break;
-
-                    case R.id.rbradio:
-                        precios = 2.5;
-                        precio.setText("" + precios);
-                }
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Calcular.class);
+                startActivity(intent);
             }
+        });
+    }
 
 }

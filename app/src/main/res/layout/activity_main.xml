@@ -9,14 +9,13 @@
     tools:context=".controller.MainActivity">
 
     <TextView
-        android:layout_width="246dp"
-        android:layout_height="46dp"
-        android:text="REGISTRAR"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REGISTRO DE ACTIVIDADES"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
 
     <EditText
         android:id="@+id/edtTipoactividad"
@@ -33,11 +32,13 @@
         android:hint="@string/can" />
 
     <EditText
-        android:id="@+id/edtEmisionesCO2"
+        android:id="@+id/txtEmisionesCO2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:padding="8dp"
         android:hint="@string/emi" />
+
     <EditText
         android:id="@+id/edtFecha"
         android:layout_width="match_parent"
@@ -51,5 +52,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="@string/boton"/>
+
+    <Button
+        android:id="@+id/btnAbrirCalcular"
+        android:layout_width="203dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Ir a Calcular"/>
 
 </LinearLayout>

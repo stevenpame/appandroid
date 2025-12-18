@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:id="@+id/calcular"
+    android:orientation="vertical"
+    tools:context=".controller.Calcular" >
 
     <TextView
         android:layout_width="wrap_content"
@@ -11,42 +14,42 @@
         android:textSize="56dp"/>
 
     <EditText
-        android:id="@+id/edtTransporte"
+        android:id="@+id/transporte"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="20sp"
         android:hint="@string/trans" />
     <EditText
-        android:id="@+id/edtEnergia"
+        android:id="@+id/energia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="20sp"
         android:hint="@string/ene" />
     <EditText
-        android:id="@+id/edtComida"
+        android:id="@+id/comida"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="20sp"
         android:hint="@string/com" />
     <Button
-        android:id="@+id/btnRegistrar"
+        android:id="@+id/btncalcula"
         android:layout_width="203dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="@string/boton2"/>
-    <EditText
+    <TextView
         android:id="@+id/edtResultado1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="@string/res1" />
-    <EditText
+    <TextView
         android:id="@+id/edtResultado2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="@string/res2" />
-    <EditText
+    <TextView
         android:id="@+id/edtResultado3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
